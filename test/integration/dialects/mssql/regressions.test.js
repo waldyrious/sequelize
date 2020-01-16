@@ -8,7 +8,7 @@ const chai = require('chai'),
   dialect = Support.getTestDialect();
 
 if (dialect.match(/^mssql/)) {
-  describe('[MSSQL Specific] Regressions', () => {
+  describe('[MSSQL-specific] Regressions', () => {
     it('does not duplicate columns in ORDER BY statement, #9008', function() {
       const LoginLog = this.sequelize.define('LoginLog', {
         ID: {

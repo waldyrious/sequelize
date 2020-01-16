@@ -86,7 +86,7 @@ Bar.belongsTo(Foo);
 
 Since no option was passed, Sequelize will infer what to do from the names of the models. In this case, Sequelize knows that a `barId` column must be added to `Foo`.
 
-This way, calling `Bar.sync()` after the above will yield the following SQL (on PostgreSQL, for example):
+This way, calling `Bar.sync()` after the above will yield the following SQL (on Postgres, for example):
 
 ```sql
 CREATE TABLE IF NOT EXISTS "foos" (
@@ -205,7 +205,7 @@ Player.belongsTo(Team);
 
 Again, as mentioned, the main way to do it used a pair of Sequelize associations (`hasMany` and `belongsTo`).
 
-For example, in PostgreSQL, the above setup will yield the following SQL upon `sync()`:
+For example, in Postgres, the above setup will yield the following SQL upon `sync()`:
 
 ```sql
 CREATE TABLE IF NOT EXISTS "Teams" (
@@ -254,7 +254,7 @@ Movie.belongsToMany(Actor, { through: 'ActorMovies' });
 Actor.belongsToMany(Movie, { through: 'ActorMovies' });
 ```
 
-Since a string was given in the `through` option of the `belongsToMany` call, Sequelize will automatically create the `ActorMovies` model which will act as the junction model. For example, in PostgreSQL:
+Since a string was given in the `through` option of the `belongsToMany` call, Sequelize will automatically create the `ActorMovies` model which will act as the junction model. For example, in Postgres:
 
 ```sql
 CREATE TABLE IF NOT EXISTS "ActorMovies" (
@@ -291,7 +291,7 @@ Movie.belongsToMany(Actor, { through: 'ActorMovies' });
 Actor.belongsToMany(Movie, { through: 'ActorMovies' });
 ```
 
-The above yields the following SQL in PostgreSQL, which is equivalent to the one shown above:
+The above yields the following SQL in Postgres, which is equivalent to the one shown above:
 
 ```sql
 CREATE TABLE IF NOT EXISTS "ActorMovies" (

@@ -9,7 +9,7 @@ const chai = require('chai'),
   DataTypes = require('../../../../lib/data-types');
 
 if (dialect === 'sqlite') {
-  describe('[SQLITE Specific] DAO', () => {
+  describe('[SQLITE-specific] DAO', () => {
     beforeEach(function() {
       this.User = this.sequelize.define('User', {
         username: DataTypes.STRING,

@@ -43,7 +43,7 @@ describe(Support.getTestDialectTeaser('Hooks'), () => {
     describe('#3534, hooks modifications', () => {
       it('fields modified in hooks are saved', function() {
         this.User.afterValidate(user => {
-          //if username is defined and has more than 5 char
+          // if username is defined and has more than 5 char
           user.username = user.username
             ? user.username.length < 5 ? null : user.username
             : null;
@@ -60,7 +60,7 @@ describe(Support.getTestDialectTeaser('Hooks'), () => {
           expect(user.mood).to.equal('neutral');
           expect(user.username).to.equal('Samorost 3');
 
-          //change attributes
+          // change attributes
           user.mood = 'sad';
           user.username = 'Samorost Good One';
 
@@ -69,12 +69,12 @@ describe(Support.getTestDialectTeaser('Hooks'), () => {
           expect(uSaved.mood).to.equal('sad');
           expect(uSaved.username).to.equal('Samorost Good One');
 
-          //change attributes, expect to be replaced by hooks
+          // change attributes, expect to be replaced by hooks
           uSaved.username = 'One';
 
           return uSaved.save();
         }).then(uSaved => {
-          //attributes were replaced by hooks ?
+          // attributes were replaced by hooks ?
           expect(uSaved.mood).to.equal('sad');
           expect(uSaved.username).to.equal('Samorost 3');
           return this.User.findByPk(uSaved.id);
@@ -95,7 +95,7 @@ describe(Support.getTestDialectTeaser('Hooks'), () => {
           expect(uFetched.mood).to.equal('neutral');
           expect(uFetched.username).to.equal('New Game is Needed');
 
-          //expect to be replaced by hooks
+          // expect to be replaced by hooks
           uFetched.username = 'New';
           uFetched.mood = 'happy';
           return uFetched.save();

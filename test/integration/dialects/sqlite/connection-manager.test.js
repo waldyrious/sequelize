@@ -11,7 +11,7 @@ const DataTypes = require('../../../../lib/data-types');
 const fileName = `${Math.random()}_test.sqlite`;
 
 if (dialect === 'sqlite') {
-  describe('[SQLITE Specific] Connection Manager', () => {
+  describe('[SQLITE-specific] Connection Manager', () => {
     after(() => {
       fs.unlinkSync(path.join(__dirname, fileName));
     });

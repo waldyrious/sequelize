@@ -8,7 +8,7 @@ const chai = require('chai'),
   DataTypes = require('../../../../lib/data-types');
 
 if (dialect.match(/^postgres/)) {
-  describe('[POSTGRES Specific] associations', () => {
+  describe('[POSTGRES-specific] associations', () => {
     describe('many-to-many', () => {
       describe('where tables have the same prefix', () => {
         it('should create a table wp_table1wp_table2s', function() {
@@ -44,7 +44,7 @@ if (dialect.match(/^postgres/)) {
     describe('HasMany', () => {
       describe('addDAO / getModel', () => {
         beforeEach(function() {
-          //prevent periods from occurring in the table name since they are used to delimit (table.column)
+          // prevent periods from occurring in the table name since they are used to delimit (table.column)
           this.User = this.sequelize.define(`User${config.rand()}`, { name: DataTypes.STRING });
           this.Task = this.sequelize.define(`Task${config.rand()}`, { name: DataTypes.STRING });
           this.users = null;
@@ -92,7 +92,7 @@ if (dialect.match(/^postgres/)) {
           const users = [],
             tasks = [];
 
-          //prevent periods from occurring in the table name since they are used to delimit (table.column)
+          // prevent periods from occurring in the table name since they are used to delimit (table.column)
           this.User = this.sequelize.define(`User${config.rand()}`, { name: DataTypes.STRING });
           this.Task = this.sequelize.define(`Task${config.rand()}`, { name: DataTypes.STRING });
           this.users = null;

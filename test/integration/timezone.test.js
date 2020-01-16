@@ -8,7 +8,7 @@ const chai = require('chai'),
   Promise = Sequelize.Promise;
 
 if (dialect !== 'sqlite') {
-  // Sqlite does not support setting timezone
+  // SQLite does not support setting timezone
 
   describe(Support.getTestDialectTeaser('Timezone'), () => {
     beforeEach(function() {

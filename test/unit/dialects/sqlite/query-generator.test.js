@@ -11,7 +11,7 @@ const chai = require('chai'),
   QueryGenerator = require('../../../../lib/dialects/sqlite/query-generator');
 
 if (dialect === 'sqlite') {
-  describe('[SQLITE Specific] QueryGenerator', () => {
+  describe('[SQLITE-specific] QueryGenerator', () => {
     beforeEach(function() {
       this.User = this.sequelize.define('User', {
         username: DataTypes.STRING

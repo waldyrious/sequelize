@@ -9,7 +9,7 @@ const sinon = require('sinon');
 const current = Support.sequelize;
 const expect = chai.expect;
 
-describe('[MYSQL/MARIADB Specific] Query', () => {
+describe('[MYSQL/MARIADB-specific] Query', () => {
   describe('logWarnings', () => {
     beforeEach(() => {
       sinon.spy(console, 'log');

@@ -8,7 +8,7 @@ const chai = require('chai'),
   dialect = Support.getTestDialect();
 
 if (dialect.match(/^mssql/)) {
-  describe('[MSSQL Specific] Query Queue', () => {
+  describe('[MSSQL-specific] Query Queue', () => {
     beforeEach(function() {
       const User = this.User = this.sequelize.define('User', {
         username: DataTypes.STRING

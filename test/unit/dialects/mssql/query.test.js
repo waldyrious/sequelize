@@ -14,7 +14,7 @@ const connectionStub = { beginTransaction: () => {}, lib: tedious };
 let sandbox, query;
 
 if (dialect === 'mssql') {
-  describe('[MSSQL Specific] Query', () => {
+  describe('[MSSQL-specific] Query', () => {
     describe('beginTransaction', () => {
       beforeEach(() => {
         sandbox = sinon.createSandbox();

@@ -1706,7 +1706,7 @@ describe(Support.getTestDialectTeaser('Model'), () => {
       const Model = current.define('Test', {
         username: Sequelize.STRING(100)
       }, {
-        rejectOnEmpty: new Sequelize.ConnectionError('Some Error') //using custom error instance
+        rejectOnEmpty: new Sequelize.ConnectionError('Some Error') // using custom error instance
       });
 
       return Model.sync({ force: true })
@@ -1723,7 +1723,7 @@ describe(Support.getTestDialectTeaser('Model'), () => {
       const Model = current.define('Test', {
         username: Sequelize.STRING(100)
       }, {
-        rejectOnEmpty: Sequelize.ConnectionError //using custom error instance
+        rejectOnEmpty: Sequelize.ConnectionError // using custom error instance
       });
 
       return Model.sync({ force: true })

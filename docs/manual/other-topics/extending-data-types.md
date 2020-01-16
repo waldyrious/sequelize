@@ -60,7 +60,7 @@ function createTheNewDataType() {
 
 After creating this new datatype, you need to map this datatype in each database dialect and make some adjustments.
 
-## PostgreSQL
+## Postgres
 
 Let's say the name of the new datatype is `pg_new_type` in the postgres database. That name has to be mapped to `DataTypes.SOMETYPE`. Additionally, it is required to create a child postgres-specific datatype.
 

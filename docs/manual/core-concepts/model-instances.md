@@ -150,7 +150,7 @@ const jane = await User.create({ name: "Jane", age: 100 });
 const incrementResult = await user.increment('age', { by: 2 });
 // Note: to increment by 1 you can omit the `by` option and just do `user.increment('age')`
 
-// In PostgreSQL, `incrementResult` will be the updated user, unless the option
+// In Postgres, `incrementResult` will be the updated user, unless the option
 // `{ returning: false }` was set (and then it will be undefined).
 
 // In other dialects, `incrementResult` will be undefined. If you need the updated instance, you will have to call `user.reload()`.

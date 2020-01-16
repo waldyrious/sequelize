@@ -7,7 +7,7 @@ const ResourceLock = require('../../../../lib/dialects/mssql/resource-lock'),
   dialect = Support.getTestDialect();
 
 if (dialect === 'mssql') {
-  describe('[MSSQL Specific] ResourceLock', () => {
+  describe('[MSSQL-specific] ResourceLock', () => {
     it('should process requests serially', () => {
       const expected = {};
       const lock = new ResourceLock(expected);

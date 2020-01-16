@@ -9,7 +9,7 @@ const chai = require('chai'),
   storages = [dbFile];
 
 if (dialect === 'sqlite') {
-  describe('[SQLITE Specific] DAOFactory', () => {
+  describe('[SQLITE-specific] DAOFactory', () => {
     after(function() {
       this.sequelize.options.storage = ':memory:';
     });

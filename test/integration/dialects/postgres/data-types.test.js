@@ -7,7 +7,7 @@ const dialect = Support.getTestDialect();
 const DataTypes = require('../../../../lib/data-types');
 
 if (dialect === 'postgres') {
-  describe('[POSTGRES Specific] Data Types', () => {
+  describe('[POSTGRES-specific] Data Types', () => {
     describe('DATE/DATEONLY Validate and Stringify', () => {
       const now = new Date();
       const nowString = now.toISOString();

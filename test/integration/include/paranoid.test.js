@@ -118,7 +118,7 @@ describe(Support.getTestDialectTeaser('Paranoid'), () => {
     }).then(() => {
       return this.y.destroy();
     }).then(() => {
-      //prevent CURRENT_TIMESTAMP to be same
+      // prevent CURRENT_TIMESTAMP to be same
       this.clock.tick(1000);
 
       return X.findAll({

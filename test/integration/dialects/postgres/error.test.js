@@ -9,7 +9,7 @@ const chai      = require('chai'),
   _ = require('lodash');
 
 if (dialect.match(/^postgres/)) {
-  describe('[POSTGRES Specific] ExclusionConstraintError', () => {
+  describe('[POSTGRES-specific] ExclusionConstraintError', () => {
     const constraintName = 'overlap_period';
     beforeEach(function() {
       this.Booking = this.sequelize.define('Booking', {

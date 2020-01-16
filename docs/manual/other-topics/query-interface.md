@@ -74,7 +74,7 @@ ALTER TABLE `Person` CHANGE `foo` `foo` FLOAT NOT NULL DEFAULT 3.14;
 queryInterface.removeColumn('Person', 'petName', { /* query options */ });
 ```
 
-Generated SQL (using PostgreSQL):
+Generated SQL (using Postgres):
 
 ```SQL
 ALTER TABLE "public"."Person" DROP COLUMN "petName";

@@ -54,7 +54,7 @@ describe(Support.getTestDialectTeaser('Include'), () => {
             { name: 'John Jane Doe', fk: 6 }
           ])
         ).then(() =>{
-          //Find all projects with tasks and employees
+          // Find all projects with tasks and employees
           const availableProjects = 3;
           const limit = 2;
 

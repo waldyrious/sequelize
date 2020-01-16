@@ -7,7 +7,7 @@ const chai = require('chai'),
   DataTypes = require('../../../../lib/data-types');
 
 if (dialect !== 'mariadb') return;
-describe('[MariaDB Specific] Errors', () => {
+describe('[MARIADB-specific] Errors', () => {
 
   const validateError = (promise, errClass, errValues) => {
     const wanted = Object.assign({}, errValues);

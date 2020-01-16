@@ -10,7 +10,7 @@ const chai = require('chai'),
   QueryGenerator = require('../../../../lib/dialects/mysql/query-generator');
 
 if (dialect === 'mysql') {
-  describe('[MYSQL Specific] QueryGenerator', () => {
+  describe('[MYSQL-specific] QueryGenerator', () => {
     const suites = {
       createDatabaseQuery: [
         {

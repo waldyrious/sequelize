@@ -13,7 +13,7 @@ services:
       SEQ_USER: sequelize_test
       SEQ_PW: sequelize_test
 
-  # PostgreSQL
+  # Postgres
   postgres-95:
     image: sushantdhiman/postgres:9.5
     environment:

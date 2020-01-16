@@ -432,7 +432,7 @@ describe(Support.getTestDialectTeaser('Model'), () => {
             { attribute: 'fieldD', length: undefined, order: undefined, collate: undefined }
           ]);
         } else {
-          // And finally mysql returns the primary first, and then the rest in the order they were defined
+          // And finally MySQL returns the primary first, and then the rest in the order they were defined
           primary = args[0];
           idx1 = args[1];
           idx2 = args[2];

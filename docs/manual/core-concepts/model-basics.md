@@ -269,7 +269,7 @@ DataTypes.STRING(1234)       // VARCHAR(1234)
 DataTypes.STRING.BINARY      // VARCHAR BINARY
 DataTypes.TEXT               // TEXT
 DataTypes.TEXT('tiny')       // TINYTEXT
-DataTypes.CITEXT             // CITEXT          PostgreSQL and SQLite only.
+DataTypes.CITEXT             // CITEXT          Postgres and SQLite only.
 ```
 
 ### Boolean
@@ -289,9 +289,9 @@ DataTypes.FLOAT              // FLOAT
 DataTypes.FLOAT(11)          // FLOAT(11)
 DataTypes.FLOAT(11, 10)      // FLOAT(11,10)
 
-DataTypes.REAL               // REAL            PostgreSQL only.
-DataTypes.REAL(11)           // REAL(11)        PostgreSQL only.
-DataTypes.REAL(11, 12)       // REAL(11,12)     PostgreSQL only.
+DataTypes.REAL               // REAL            Postgres only.
+DataTypes.REAL(11)           // REAL(11)        Postgres only.
+DataTypes.REAL(11, 12)       // REAL(11,12)     Postgres only.
 
 DataTypes.DOUBLE             // DOUBLE
 DataTypes.DOUBLE(11)         // DOUBLE(11)
@@ -316,14 +316,14 @@ DataTypes.INTEGER.UNSIGNED.ZEROFILL
 ### Dates
 
 ```js
-DataTypes.DATE       // DATETIME for mysql / sqlite, TIMESTAMP WITH TIME ZONE for postgres
-DataTypes.DATE(6)    // DATETIME(6) for mysql 5.6.4+. Fractional seconds support with up to 6 digits of precision
+DataTypes.DATE       // DATETIME for MySQL / SQLite, TIMESTAMP WITH TIME ZONE for Postgres
+DataTypes.DATE(6)    // DATETIME(6) for MySQL 5.6.4+. Fractional seconds support with up to 6 digits of precision
 DataTypes.DATEONLY   // DATE without time
 ```
 
 ### UUIDs
 
-For UUIDs, use `DataTypes.UUID`. It becomes the `UUID` data type for PostgreSQL and SQLite, and `CHAR(36)` for MySQL. Sequelize can generate UUIDs automatically for these fields, simply use `Sequelize.UUIDV1` or `Sequelize.UUIDV4` as the default value:
+For UUIDs, use `DataTypes.UUID`. It becomes the `UUID` data type for Postgres and SQLite, and `CHAR(36)` for MySQL. Sequelize can generate UUIDs automatically for these fields, simply use `Sequelize.UUIDV1` or `Sequelize.UUIDV4` as the default value:
 
 ```js
 {
@@ -385,7 +385,7 @@ Foo.init({
       // This is the column name of the referenced model
       key: 'id',
 
-      // With PostgreSQL, it is optionally possible to declare when to check the foreign key constraint, passing the Deferrable type.
+      // With Postgres, it is optionally possible to declare when to check the foreign key constraint, passing the Deferrable type.
       deferrable: Deferrable.INITIALLY_IMMEDIATE
       // Options:
       // - `Deferrable.INITIALLY_IMMEDIATE` - Immediately check the foreign key constraints
@@ -394,7 +394,7 @@ Foo.init({
     }
   },
 
-  // Comments can only be added to columns in MySQL, MariaDB, PostgreSQL and MSSQL
+  // Comments can only be added to columns in MySQL, MariaDB, Postgres and MSSQL
   commentMe: {
     type: DataTypes.INTEGER,
     comment: 'This is a column name that has a comment'

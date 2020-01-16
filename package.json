@@ -1,6 +1,6 @@
 {
   "name": "sequelize",
-  "description": "Multi dialect ORM for Node.JS",
+  "description": "Multi dialect ORM for Node.js",
   "version": "6.0.0-beta.4",
   "maintainers": [
     "Sascha Depold <sascha@depold.com>",

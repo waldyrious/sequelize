@@ -11,7 +11,7 @@ if (dialect.match(/^postgres/)) {
   // Don't try to load pg until we know we're running on postgres.
   const pg = require('pg');
 
-  describe('[POSTGRES Specific] range datatype', () => {
+  describe('[POSTGRES-specific] range datatype', () => {
     describe('stringify', () => {
       it('should handle empty objects correctly', () => {
         expect(range.stringify([])).to.equal('empty');

@@ -254,7 +254,7 @@ describe(Support.getTestDialectTeaser('Model'), () => {
 
       describe('Persist and retrieve data', () => {
         it('should be able to insert data into both schemas using instance.save and retrieve/count it', function() {
-          //building and saving in random order to make sure calling
+          // building and saving in random order to make sure calling
           // .schema doesn't impact model prototype
           let restaurauntModel = this.RestaurantOne.build({ bar: 'one.1' });
 

@@ -407,18 +407,18 @@ describe(Support.getTestDialectTeaser('DataTypes'), () => {
 
           return current.sync({ force: true }).then(() => {
             return User.create({
-              //insert a empty GEOMETRY type
+              // insert a empty GEOMETRY type
               field: point
             });
           }).then(() => {
-            //This case throw unhandled exception
+            // This case throw unhandled exception
             return User.findAll();
           }).then(users =>{
             if (dialect === 'mysql' || dialect === 'mariadb') {
               // MySQL will return NULL, because they lack EMPTY geometry data support.
               expect(users[0].field).to.be.eql(null);
             } else if (dialect === 'postgres' || dialect === 'postgres-native') {
-              //Empty Geometry data [0,0] as per https://trac.osgeo.org/postgis/ticket/1996
+              // Empty Geometry data [0,0] as per https://trac.osgeo.org/postgis/ticket/1996
               expect(users[0].field).to.be.deep.eql({ type: 'Point', coordinates: [0, 0] });
             } else {
               expect(users[0].field).to.be.deep.eql(point);
@@ -442,7 +442,7 @@ describe(Support.getTestDialectTeaser('DataTypes'), () => {
           field: point
         });
       }).then(() => {
-        //This case throw unhandled exception
+        // This case throw unhandled exception
         return User.findAll();
       }).then(users =>{
         expect(users[0].field).to.be.eql(null);
@@ -501,7 +501,7 @@ describe(Support.getTestDialectTeaser('DataTypes'), () => {
         return Model.findByPk(1);
       }).then(user => {
         /**
-         * MYSQL default precision is 10 and scale is 0
+         * MySQL default precision is 10 and scale is 0
          * Thus test case below will return number without any fraction values
         */
         if (dialect === 'mysql') {

@@ -126,7 +126,7 @@ describe(Support.getTestDialectTeaser('QueryInterface'), () => {
       });
     }
 
-    //SQlite natively doesn't support ALTER Foreign key
+    // SQlite natively doesn't support ALTER Foreign key
     if (dialect !== 'sqlite') {
       describe('should support foreign keys', () => {
         beforeEach(function() {
@@ -209,7 +209,7 @@ describe(Support.getTestDialectTeaser('QueryInterface'), () => {
             expect(firstForeignKeys.length).to.be.equal(newForeignKeys.length);
             expect(firstForeignKeys[0].columnName).to.be.equal('level_id');
             expect(firstForeignKeys[0].columnName).to.be.equal(newForeignKeys[0].columnName);
-            
+
             return this.queryInterface.describeTable({
               tableName: 'users'
             });

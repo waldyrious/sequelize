@@ -8,7 +8,7 @@ const chai = require('chai'),
   config = require('../../../config/config');
 
 if (dialect !== 'mariadb') return;
-describe('[MariaDB Specific] DAOFactory', () => {
+describe('[MARIADB-specific] DAOFactory', () => {
   describe('constructor', () => {
     it('handles extended attributes (unique)', function() {
       const User = this.sequelize.define(`User${config.rand()}`, {

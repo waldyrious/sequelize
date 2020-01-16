@@ -150,7 +150,7 @@ describe(Support.getTestDialectTeaser('Instance'), () => {
         timestamps: true
       });
 
-      this.clock.tick(2100); //move the clock forward 2100 ms.
+      this.clock.tick(2100); // move the clock forward 2100 ms.
 
       return User.sync({ force: true }).then(() => {
         return User.create({

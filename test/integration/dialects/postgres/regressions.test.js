@@ -7,7 +7,7 @@ const chai = require('chai'),
   dialect = Support.getTestDialect();
 
 if (dialect.match(/^postgres/)) {
-  describe('[POSTGRES Specific] Regressions', () => {
+  describe('[POSTGRES-specific] Regressions', () => {
     it('properly fetch OIDs after sync, #8749', function() {
       const User = this.sequelize.define('User', {
         active: Sequelize.BOOLEAN

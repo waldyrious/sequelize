@@ -1,37 +1,14 @@
+import { ConnectionManager } from './connection-manager';
 import * as DataTypes from './data-types';
-import * as Deferrable from './deferrable';
 import { HookReturn, Hooks, SequelizeHooks } from './hooks';
 import { ValidationOptions } from './instance-validator';
-import {
-  AndOperator,
-  BulkCreateOptions,
-  CreateOptions,
-  DestroyOptions,
-  DropOptions,
-  FindOptions,
-  InstanceDestroyOptions,
-  Logging,
-  Model,
-  ModelAttributeColumnOptions,
-  ModelAttributes,
-  ModelOptions,
-  OrOperator,
-  UpdateOptions,
-  WhereAttributeHash,
-  WhereOperators,
-  ModelCtor,
-} from './model';
+import { AndOperator, BulkCreateOptions, CreateOptions, DestroyOptions, DropOptions, FindOptions, InstanceDestroyOptions, Logging, Model, ModelAttributeColumnOptions, ModelAttributes, ModelCtor, ModelOptions, OrOperator, UpdateOptions, WhereAttributeHash, WhereOperators } from './model';
 import { ModelManager } from './model-manager';
-import * as Op from './operators';
 import { Promise } from './promise';
 import { QueryInterface, QueryOptions, QueryOptionsWithModel, QueryOptionsWithType } from './query-interface';
-import QueryTypes = require('./query-types');
 import { Transaction, TransactionOptions } from './transaction';
 import { Cast, Col, Fn, Json, Literal, Where } from './utils';
-// tslint:disable-next-line:no-duplicate-imports
-import * as Utils from './utils';
-import { validator } from './utils/validator-extras';
-import { ConnectionManager } from './connection-manager';
+import QueryTypes = require('./query-types');
 
 /**
  * Additional options for table altering during sync
@@ -350,7 +327,7 @@ export interface Options extends Logging {
 
 
   /**
-   * The PostgreSQL `standard_conforming_strings` session parameter. Set to `false` to not set the option.
+   * The Postgres `standard_conforming_strings` session parameter. Set to `false` to not set the option.
    * WARNING: Setting this to false may expose vulnerabilities and is not recommended!
    *
    * @default true
@@ -1234,7 +1211,7 @@ export class Sequelize extends Hooks {
    *
    * Only works for MySQL.
    *
-   * @param variables object with multiple variables.
+   * @param variables object with multiple variables
    * @param options Query options.
    */
   public set(variables: object, options: QueryOptionsTransactionRequired): Promise<unknown>;
@@ -1251,7 +1228,7 @@ export class Sequelize extends Hooks {
    *
    * Note,that this is a schema in the
    * [postgres sense of the word](http://www.postgresql.org/docs/9.1/static/ddl-schemas.html),
-   * not a database table. In mysql and sqlite, this command will do nothing.
+   * not a database table. In MySQL and SQLite, this command will do nothing.
    *
    * @param schema Name of the schema
    * @param options Options supplied
@@ -1263,7 +1240,7 @@ export class Sequelize extends Hooks {
    *
    * Note,that this is a schema in the
    * [postgres sense of the word](http://www.postgresql.org/docs/9.1/static/ddl-schemas.html),
-   * not a database table. In mysql and sqlite, this will show all tables.
+   * not a database table. In MySQL and SQLite, this will show all tables.
    *
    * @param options Options supplied
    */
@@ -1274,7 +1251,7 @@ export class Sequelize extends Hooks {
    *
    * Note,that this is a schema in the
    * [postgres sense of the word](http://www.postgresql.org/docs/9.1/static/ddl-schemas.html),
-   * not a database table. In mysql and sqlite, this drop a table matching the schema name
+   * not a database table. In MySQL and SQLite, this drop a table matching the schema name
    *
    * @param schema Name of the schema
    * @param options Options supplied
@@ -1286,7 +1263,7 @@ export class Sequelize extends Hooks {
    *
    * Note,that this is a schema in the
    * [postgres sense of the word](http://www.postgresql.org/docs/9.1/static/ddl-schemas.html),
-   * not a database table. In mysql and sqlite, this is the equivalent of drop all tables.
+   * not a database table. In MySQL and SQLite, this is the equivalent of drop all tables.
    *
    * @param options Options supplied
    */

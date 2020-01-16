@@ -11,7 +11,7 @@ if (dialect !== 'mariadb') {
   return;
 }
 
-describe('[MARIADB Specific] Connection Manager', () => {
+describe('[MARIADB-specific] Connection Manager', () => {
 
   it('has existing init SQL', () => {
     const sequelize = Support.createSequelizeInstance(

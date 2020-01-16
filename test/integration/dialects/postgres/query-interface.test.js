@@ -9,7 +9,7 @@ const _ = require('lodash');
 
 
 if (dialect.match(/^postgres/)) {
-  describe('[POSTGRES Specific] QueryInterface', () => {
+  describe('[POSTGRES-specific] QueryInterface', () => {
     beforeEach(function() {
       this.sequelize.options.quoteIdenifiers = true;
       this.queryInterface = this.sequelize.getQueryInterface();

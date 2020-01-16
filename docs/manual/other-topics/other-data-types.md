@@ -2,7 +2,7 @@
 
 Apart from the most common data types mentioned in the Model Basics guide, Sequelize provides several other data types.
 
-## Ranges (PostgreSQL only)
+## Ranges (Postgres only)
 
 ```js
 DataTypes.RANGE(DataTypes.INTEGER)    // int4range
@@ -75,10 +75,10 @@ Timeline.create({ range: [-Infinity, new Date(Date.UTC(2016, 0, 1))] });
 ## BLOBs
 
 ```js
-DataTypes.BLOB                // BLOB (bytea for PostgreSQL)
-DataTypes.BLOB('tiny')        // TINYBLOB (bytea for PostgreSQL)
-DataTypes.BLOB('medium')      // MEDIUMBLOB (bytea for PostgreSQL)
-DataTypes.BLOB('long')        // LONGBLOB (bytea for PostgreSQL)
+DataTypes.BLOB                // BLOB (bytea for Postgres)
+DataTypes.BLOB('tiny')        // TINYBLOB (bytea for Postgres)
+DataTypes.BLOB('medium')      // MEDIUMBLOB (bytea for Postgres)
+DataTypes.BLOB('long')        // LONGBLOB (bytea for Postgres)
 ```
 
 The blob datatype allows you to insert data both as strings and as buffers. However, when a blob is retrieved from database with Sequelize, it will always be retrieved as a buffer.
@@ -102,17 +102,17 @@ sequelize.define('foo', {
 });
 ```
 
-## JSON (SQLite, MySQL, MariaDB and PostgreSQL only)
+## JSON (SQLite, MySQL, MariaDB and Postgres only)
 
-The `DataTypes.JSON` data type is only supported for SQLite, MySQL, MariaDB and PostgreSQL. However, there is a minimum support for MSSQL (see below).
+The `DataTypes.JSON` data type is only supported for SQLite, MySQL, MariaDB and Postgres. However, there is a minimum support for MSSQL (see below).
 
-### Note for PostgreSQL
+### Note for Postgres
 
-The JSON data type in PostgreSQL stores the value as plain text, as opposed to binary representation. If you simply want to store and retrieve a JSON representation, using JSON will take less disk space and less time to build from its input representation. However, if you want to do any operations on the JSON value, you should prefer the JSONB data type described below.
+The JSON data type in Postgres stores the value as plain text, as opposed to binary representation. If you simply want to store and retrieve a JSON representation, using JSON will take less disk space and less time to build from its input representation. However, if you want to do any operations on the JSON value, you should prefer the JSONB data type described below.
 
-### JSONB (PostgreSQL only)
+### JSONB (Postgres only)
 
-PostgreSQL also supports a JSONB data type: `DataTypes.JSONB`. It can be queried in three different ways:
+Postgres also supports a JSONB data type: `DataTypes.JSONB`. It can be queried in three different ways:
 
 ```js
 // Nested object
@@ -180,13 +180,13 @@ await User.findAll({
 ## Others
 
 ```js
-DataTypes.ARRAY(/* DataTypes.SOMETHING */)  // Defines an array of DataTypes.SOMETHING. PostgreSQL only.
+DataTypes.ARRAY(/* DataTypes.SOMETHING */)  // Defines an array of DataTypes.SOMETHING. Postgres only.
 
-DataTypes.CIDR                        // CIDR                  PostgreSQL only
-DataTypes.INET                        // INET                  PostgreSQL only
-DataTypes.MACADDR                     // MACADDR               PostgreSQL only
+DataTypes.CIDR                        // CIDR                  Postgres only
+DataTypes.INET                        // INET                  Postgres only
+DataTypes.MACADDR                     // MACADDR               Postgres only
 
-DataTypes.GEOMETRY                    // Spatial column. PostgreSQL (with PostGIS) or MySQL only.
-DataTypes.GEOMETRY('POINT')           // Spatial column with geometry type. PostgreSQL (with PostGIS) or MySQL only.
-DataTypes.GEOMETRY('POINT', 4326)     // Spatial column with geometry type and SRID. PostgreSQL (with PostGIS) or MySQL only.
+DataTypes.GEOMETRY                    // Spatial column. Postgres (with PostGIS) or MySQL only.
+DataTypes.GEOMETRY('POINT')           // Spatial column with geometry type. Postgres (with PostGIS) or MySQL only.
+DataTypes.GEOMETRY('POINT', 4326)     // Spatial column with geometry type and SRID. Postgres (with PostGIS) or MySQL only.
 ```

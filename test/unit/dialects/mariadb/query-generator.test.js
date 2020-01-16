@@ -10,7 +10,7 @@ const chai = require('chai'),
   QueryGenerator = require('../../../../lib/dialects/mariadb/query-generator');
 
 if (dialect === 'mariadb') {
-  describe('[MARIADB Specific] QueryGenerator', () => {
+  describe('[MARIADB-specific] QueryGenerator', () => {
     const suites = {
       createDatabaseQuery: [
         {

@@ -12,7 +12,7 @@ const chai = require('chai'),
   _ = require('lodash');
 
 if (dialect.startsWith('postgres')) {
-  describe('[POSTGRES Specific] QueryGenerator', () => {
+  describe('[POSTGRES-specific] QueryGenerator', () => {
     const suites = {
       createDatabaseQuery: [
         {

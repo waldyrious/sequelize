@@ -106,7 +106,7 @@ if (current.dialect.supports.transactions) {
         });
       });
 
-      //Promise rejection test is specific to postgres
+      // Promise rejection test is specific to postgres
       if (dialect === 'postgres') {
         it('do not rollback if already committed', function() {
           const SumSumSum = this.sequelize.define('transaction', {
@@ -559,7 +559,7 @@ if (current.dialect.supports.transactions) {
                 return User.findAll({ transaction })
                   .then(users => expect( users ).to.have.lengthOf(0))
                   .then(() => User.create({ username: 'jan' })) // Create a User outside of the transaction
-                  .then(() => User.findAll({ transaction })) 
+                  .then(() => User.findAll({ transaction }))
                   .then(users => expect( users ).to.have.lengthOf(0)); // We SHOULD NOT see the created user inside the transaction
               });
             })
@@ -567,7 +567,7 @@ if (current.dialect.supports.transactions) {
         });
       }
 
-      // PostgreSQL is excluded because it detects Serialization Failure on commit instead of acquiring locks on the read rows
+      // Postgres is excluded because it detects Serialization Failure on commit instead of acquiring locks on the read rows
       if (!['sqlite', 'postgres', 'postgres-native'].includes(dialect)) {
         it('should block updates after reading a row using SERIALIZABLE', function() {
           const User = this.sequelize.define('user', {

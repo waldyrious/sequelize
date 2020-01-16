@@ -7,7 +7,7 @@ const chai = require('chai'),
   DataTypes = require('../../../../lib/data-types');
 
 if (dialect !== 'mariadb') return;
-describe('[MariaDB Specific] DAO', () => {
+describe('[MARIADB-specific] DAO', () => {
   beforeEach(function() {
     this.sequelize.options.quoteIdentifiers = true;
     this.User = this.sequelize.define('User', {

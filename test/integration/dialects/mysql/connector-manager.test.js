@@ -7,7 +7,7 @@ const dialect = Support.getTestDialect();
 const DataTypes = require('../../../../lib/data-types');
 
 if (dialect === 'mysql') {
-  describe('[MYSQL Specific] Connection Manager', () => {
+  describe('[MYSQL-specific] Connection Manager', () => {
     it('-FOUND_ROWS can be suppressed to get back legacy behavior', () => {
       const sequelize = Support.createSequelizeInstance({ dialectOptions: { flags: '' } });
       const User = sequelize.define('User', { username: DataTypes.STRING });

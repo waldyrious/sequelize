@@ -1,9 +1,9 @@
 import { DataType } from './data-types';
-import { Logging, Model, ModelAttributeColumnOptions, ModelAttributes, Transactionable, WhereOptions, Filterable, Poolable } from './model';
+import { Filterable, Logging, Model, ModelAttributeColumnOptions, ModelAttributes, Poolable, Transactionable, WhereOptions } from './model';
 import { Promise } from './promise';
-import QueryTypes = require('./query-types');
-import { Sequelize, RetryOptions } from './sequelize';
+import { RetryOptions, Sequelize } from './sequelize';
 import { Transaction } from './transaction';
+import QueryTypes = require('./query-types');
 
 type BindOrReplacements = { [key: string]: unknown } | unknown[];
 type FieldMap = { [key: string]: string };
@@ -160,7 +160,7 @@ export interface IndexesOptions {
   unique?: boolean;
 
   /**
-   * PostgreSQL will build the index without taking any write locks. Postgres only
+   * Postgres will build the index without taking any write locks. Postgres only
    *
    * @default false
    */
@@ -175,8 +175,8 @@ export interface IndexesOptions {
   fields?: (string | { name: string; length?: number; order?: 'ASC' | 'DESC'; collate?: string })[];
 
   /**
-   * The method to create the index by (`USING` statement in SQL). BTREE and HASH are supported by mysql and
-   * postgres, and postgres additionally supports GIST, SPGIST, BRIN and GIN.
+   * The method to create the index by (`USING` statement in SQL). BTREE and HASH are supported by MySQL and
+   * Postgres, and Postgres additionally supports GIST, SPGIST, BRIN and GIN.
    */
   using?: IndexMethod;
 
@@ -316,7 +316,7 @@ export class QueryInterface {
   /**
    * Drops the specified table.
    *
-   * @param tableName Table name.
+   * @param tableName Table name
    * @param options   Query options, particularly "force".
    */
   public dropTable(tableName: string, options?: QueryInterfaceDropTableOptions): Promise<void>;

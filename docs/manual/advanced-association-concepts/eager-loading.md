@@ -293,7 +293,7 @@ INNER JOIN `tools` AS `Instruments` ON
 WHERE `Instruments`.`size` != 'small';
 ```
 
-### Fetching with `RIGHT OUTER JOIN` (MySQL, MariaDB, PostgreSQL and MSSQL only)
+### Fetching with `RIGHT OUTER JOIN` (MySQL, MariaDB, Postgres and MSSQL only)
 
 By default, associations are loaded using a `LEFT OUTER JOIN` - that is to say it only includes records from the parent table. You can change this behavior to a `RIGHT OUTER JOIN` by passing the `right` option, if the dialect you are using supports it.
 

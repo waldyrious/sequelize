@@ -1,5 +1,5 @@
 /**
- * Available index hints to be used for querying data in mysql for index hints.
+ * Available index hints to be used for querying data in MySQL for index hints.
  */
 declare enum IndexHints {
   USE = 'USE',

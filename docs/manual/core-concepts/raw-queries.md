@@ -143,7 +143,7 @@ Bind parameters are like replacements. Except replacements are escaped and inser
 
 The array or object must contain all bound values or Sequelize will throw an exception. This applies even to cases in which the database may ignore the bound parameter.
 
-The database may add further restrictions to this. Bind parameters cannot be SQL keywords, nor table or column names. They are also ignored in quoted text or data. In PostgreSQL it may also be needed to typecast them, if the type cannot be inferred from the context `$1::varchar`.
+The database may add further restrictions to this. Bind parameters cannot be SQL keywords, nor table or column names. They are also ignored in quoted text or data. In Postgres it may also be needed to typecast them, if the type cannot be inferred from the context `$1::varchar`.
 
 ```js
 const { QueryTypes } = require('sequelize');

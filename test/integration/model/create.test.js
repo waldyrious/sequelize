@@ -948,12 +948,12 @@ describe(Support.getTestDialectTeaser('Model'), () => {
           });
         });
       }
-      // functions as default values are not supported in mysql, see http://stackoverflow.com/a/270338/800016
+      // functions as default values are not supported in MySQL, see http://stackoverflow.com/a/270338/800016
       return void 0;
     });
 
     if (dialect === 'postgres') {
-      it('does not cast arrays for postgresql insert', function() {
+      it('does not cast arrays for Postgres insert', function() {
         const User = this.sequelize.define('UserWithArray', {
           myvals: { type: Sequelize.ARRAY(Sequelize.INTEGER) },
           mystr: { type: Sequelize.ARRAY(Sequelize.STRING) }

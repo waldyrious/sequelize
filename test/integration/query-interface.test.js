@@ -656,7 +656,7 @@ describe(Support.getTestDialectTeaser('QueryInterface'), () => {
           .then(() => this.queryInterface.showConstraint('users'))
           .then(constraints => {
             constraints = constraints.map(constraint => constraint.constraintName);
-            //The name of primaryKey constraint is always PRIMARY in case of mysql
+            // The name of primaryKey constraint is always PRIMARY in case of mysql
             if (dialect === 'mysql' || dialect === 'mariadb') {
               expect(constraints).to.include('PRIMARY');
               return this.queryInterface.removeConstraint('users', 'PRIMARY');

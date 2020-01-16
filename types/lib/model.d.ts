@@ -5,9 +5,9 @@ import { Deferrable } from './deferrable';
 import { HookReturn, Hooks, ModelHooks } from './hooks';
 import { ValidationOptions } from './instance-validator';
 import { Promise } from './promise';
-import { QueryOptions, IndexesOptions } from './query-interface';
-import { Config, Options, Sequelize, SyncOptions } from './sequelize';
-import { Transaction, LOCK } from './transaction';
+import { IndexesOptions, QueryOptions } from './query-interface';
+import { Sequelize, SyncOptions } from './sequelize';
+import { LOCK, Transaction } from './transaction';
 import { Col, Fn, Literal, Where } from './utils';
 import Op = require('./operators');
 
@@ -882,7 +882,7 @@ export interface UpdateOptions extends Logging, Transactionable, Paranoid {
   returning?: boolean;
 
   /**
-   * How many rows to update (only for mysql and mariadb)
+   * How many rows to update (only for MySQL and MariaDB)
    */
   limit?: number;
 
@@ -1252,7 +1252,7 @@ export interface ModelAttributeColumnReferencesOptions {
   /**
    * When to check for the foreign key constraing
    *
-   * PostgreSQL only
+   * Postgres only
    */
   deferrable?: Deferrable;
 }
@@ -1632,8 +1632,8 @@ export abstract class Model<T = any, T2 = any> extends Hooks {
   /**
    * Apply a schema to this model. For postgres, this will actually place the schema in front of the table
    * name
-   * - `"schema"."tableName"`, while the schema will be prepended to the table name for mysql and
-   * sqlite - `'schema.tablename'`.
+   * - `"schema"."tableName"`, while the schema will be prepended to the table name for MySQL and
+   * SQLite - `'schema.tablename'`.
    *
    * @param schema The name of the schema
    * @param options
@@ -1817,7 +1817,7 @@ export abstract class Model<T = any, T2 = any> extends Hooks {
    * Run an aggregation method on the specified field
    *
    * @param field The field to aggregate over. Can be a field name or *
-   * @param aggregateFunction The function to use for aggregation, e.g. sum, max etc.
+   * @param aggregateFunction The function to use for aggregation, e.g. sum, max etc
    * @param options Query options. See sequelize.query for full options
    * @return Returns the aggregate result cast to `options.dataType`, unless `options.plain` is false, in
    *     which case the complete data result is returned.
@@ -1979,7 +1979,7 @@ export abstract class Model<T = any, T2 = any> extends Hooks {
    * **Implementation details:**
    *
    * * MySQL - Implemented as a single query `INSERT values ON DUPLICATE KEY UPDATE values`
-   * * PostgreSQL - Implemented as a temporary function with exception handling: INSERT EXCEPTION WHEN
+   * * Postgres - Implemented as a temporary function with exception handling: INSERT EXCEPTION WHEN
    *   unique_constraint UPDATE
    * * SQLite - Implemented as two queries `INSERT; UPDATE`. This means that the update is executed
    * regardless
@@ -2621,11 +2621,11 @@ export abstract class Model<T = any, T2 = any> extends Hooks {
 
   /**
    * Validates this instance, and if the validation passes, persists it to the database.
-   * 
+   *
    * Returns a Promise that resolves to the saved instance (or rejects with a `Sequelize.ValidationError`, which will have a property for each of the fields for which the validation failed, with the error message for that field).
-   * 
+   *
    * This method is optimized to perform an UPDATE only into the fields that changed. If nothing has changed, no SQL query will be performed.
-   * 
+   *
    * This method is not aware of eager loaded associations. In other words, if some other model instance (child) was eager loaded with this instance (parent), and you change something in the child, calling `save()` will simply ignore the change that happened on the child.
    */
   public save(options?: SaveOptions): Promise<this>;

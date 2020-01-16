@@ -416,7 +416,7 @@ describe(Support.getTestDialectTeaser('BelongsToMany'), () => {
           expect(users[1].Groups[0].usergroups.UserUserSecondId).to.be.equal(users[1].userSecondId);
           expect(users[1].Groups[0].usergroups.GroupGroupSecondId).to.be.ok;
           expect(users[1].Groups[0].usergroups.GroupGroupSecondId).to.be.equal(users[1].Groups[0].groupSecondId);
-          
+
           expect(groups.length).to.be.equal(2);
           expect(groups[0].Users.length).to.be.equal(1);
           expect(groups[1].Users.length).to.be.equal(1);
@@ -508,7 +508,7 @@ describe(Support.getTestDialectTeaser('BelongsToMany'), () => {
           expect(users[1].Groups[0].usergroups.UserUserSecondId).to.be.equal(users[1].userSecondId);
           expect(users[1].Groups[0].usergroups.GroupId).to.be.ok;
           expect(users[1].Groups[0].usergroups.GroupId).to.be.equal(users[1].Groups[0].id);
-          
+
           expect(groups.length).to.be.equal(2);
           expect(groups[0].Users.length).to.be.equal(1);
           expect(groups[1].Users.length).to.be.equal(1);
@@ -606,7 +606,7 @@ describe(Support.getTestDialectTeaser('BelongsToMany'), () => {
           expect(users[1].Groups[0].usergroups.UserUserSecondId).to.be.equal(users[1].userSecondId);
           expect(users[1].Groups[0].usergroups.GroupGroupSecondId).to.be.ok;
           expect(users[1].Groups[0].usergroups.GroupGroupSecondId).to.be.equal(users[1].Groups[0].groupSecondId);
-          
+
           expect(groups.length).to.be.equal(2);
           expect(groups[0].Users.length).to.be.equal(1);
           expect(groups[1].Users.length).to.be.equal(1);
@@ -715,7 +715,7 @@ describe(Support.getTestDialectTeaser('BelongsToMany'), () => {
           expect(users[1].Groups[0].User_has_Group.UserUserSecondId).to.be.equal(users[1].userSecondId);
           expect(users[1].Groups[0].User_has_Group.GroupGroupSecondId).to.be.ok;
           expect(users[1].Groups[0].User_has_Group.GroupGroupSecondId).to.be.equal(users[1].Groups[0].groupSecondId);
-          
+
           expect(groups.length).to.be.equal(2);
           expect(groups[0].Users.length).to.be.equal(1);
           expect(groups[1].Users.length).to.be.equal(1);
@@ -813,7 +813,7 @@ describe(Support.getTestDialectTeaser('BelongsToMany'), () => {
           expect(users[1].Groups[0].usergroups.userId2).to.be.equal(users[1].userSecondId);
           expect(users[1].Groups[0].usergroups.groupId2).to.be.ok;
           expect(users[1].Groups[0].usergroups.groupId2).to.be.equal(users[1].Groups[0].groupSecondId);
-          
+
           expect(groups.length).to.be.equal(2);
           expect(groups[0].Users.length).to.be.equal(1);
           expect(groups[1].Users.length).to.be.equal(1);
@@ -932,7 +932,7 @@ describe(Support.getTestDialectTeaser('BelongsToMany'), () => {
           expect(users[1].Groups[0].User_has_Group.userId2).to.be.equal(users[1].userSecondId);
           expect(users[1].Groups[0].User_has_Group.groupId2).to.be.ok;
           expect(users[1].Groups[0].User_has_Group.groupId2).to.be.equal(users[1].Groups[0].groupSecondId);
-          
+
           expect(groups.length).to.be.equal(2);
           expect(groups[0].Users.length).to.be.equal(1);
           expect(groups[1].Users.length).to.be.equal(1);
@@ -1934,7 +1934,7 @@ describe(Support.getTestDialectTeaser('BelongsToMany'), () => {
             }
           ]
         });
-      //create associations
+      // create associations
       User.belongsToMany(Task, { through: 'UserTasks' });
       Task.belongsToMany(User, { through: 'UserTasks' });
       return this.sequelize.sync({ force: true });
@@ -2232,7 +2232,7 @@ describe(Support.getTestDialectTeaser('BelongsToMany'), () => {
       });
 
       const Place = this.sequelize.define('Place', {
-        //fields
+        // fields
       }, {
         tableName: 'places',
         underscored: true,
@@ -2586,7 +2586,7 @@ describe(Support.getTestDialectTeaser('BelongsToMany'), () => {
           });
         }).then(users => {
           const project = users[0].Projects[0];
-          
+
           expect(project.UserProjects).not.to.exist;
           expect(project.status).not.to.exist;
           expect(project.myProject).to.be.ok;

@@ -8,7 +8,7 @@ const dialect = Support.getTestDialect();
 const queryProto = Support.sequelize.dialect.Query.prototype;
 
 if (dialect === 'mysql') {
-  describe('[MYSQL Specific] ForeignKeyConstraintError - error message parsing', () => {
+  describe('[MYSQL-specific] ForeignKeyConstraintError - error message parsing', () => {
     it('FK Errors with ` quotation char are parsed correctly', () => {
       const fakeErr = new Error('Cannot delete or update a parent row: a foreign key constraint fails (`table`.`brothers`, CONSTRAINT `brothers_ibfk_1` FOREIGN KEY (`personId`) REFERENCES `people` (`id`) ON UPDATE CASCADE).');
 
@@ -52,6 +52,6 @@ if (dialect === 'mysql') {
       expect(parsedErr.parent).to.equal(fakeErr);
       expect(parsedErr.fields.num).to.equal('13888888888\r');
     });
-    
+
   });
 }

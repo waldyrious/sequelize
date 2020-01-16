@@ -289,7 +289,7 @@ describe(Support.getTestDialectTeaser('SQL'), () => {
         order: [['[last_name]'.replace(/\[/g, Support.sequelize.dialect.TICK_CHAR_LEFT).replace(/\]/g, Support.sequelize.dialect.TICK_CHAR_RIGHT), 'ASC']],
         limit: 30,
         offset: 10,
-        hasMultiAssociation: true, //must be set only for mssql dialect here
+        hasMultiAssociation: true, // must be set only for mssql dialect here
         subQuery: true
       }, {
         default: `${'SELECT [user].*, [POSTS].[id] AS [POSTS.id], [POSTS].[title] AS [POSTS.title] FROM (' +

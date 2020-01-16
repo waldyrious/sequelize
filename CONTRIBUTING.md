@@ -9,8 +9,8 @@ Issues are always very welcome - after all, they are a big part of making sequel
   * Post a _minimal_ code sample that reproduces the issue, including models and associations
   * What do you expect to happen?
   * What is actually happening?
-* Which dialect you are using (postgres, mysql etc)?
-* Which sequelize version you are using?
+* Which dialect you are using (Postgres, MySQL, etc.)?
+* Which Sequelize version you are using?
 
 When you post code, please use [Github flavored markdown](https://help.github.com/articles/github-flavored-markdown), in order to get proper syntax highlighting!
 
@@ -32,7 +32,7 @@ We're glad to get pull request if any functionality is missing or something is b
 Interested? Coolio! Here is how to get started:
 
 ### 1. Prepare your environment
-Here comes a little surprise: You need [Node.JS](http://nodejs.org).
+Here comes a little surprise: You need [Node.js](http://nodejs.org).
 
 ### 2. Install the dependencies
 
@@ -45,11 +45,11 @@ $ npm install
 
 ### 3. Database
 
-Database instances for testing can be started using Docker or you can use local instances of MySQL and PostgreSQL.
+Database instances for testing can be started using Docker or you can use local instances of MySQL and Postgres.
 
 #### 3.a Local instances
 
-For MySQL and PostgreSQL you'll need to create a DB called `sequelize_test`.
+For MySQL and Postgres you'll need to create a DB called `sequelize_test`.
 For MySQL this would look like this:
 
 ```sh
@@ -85,7 +85,7 @@ Make sure `docker` and `docker-compose` are installed.
 
 If running on macOS, install [Docker for Mac](https://docs.docker.com/docker-for-mac/).
 
-Now launch the docker mysql and postgres servers with this command (you can add `-d` to run them in daemon mode):
+Now launch the Docker MySQL and Postgres servers with this command (you can add `-d` to run them in daemon mode):
 
 ```sh
 $ docker-compose up postgres-95 mysql-57 mssql
@@ -109,7 +109,7 @@ $ docker-compose up postgres-95 mysql-57 mssql
 
 **MSSQL:** Please run `npm run setup-mssql` to create the test database.
 
-**POSTGRES:** Sequelize uses [special](https://github.com/sushantdhiman/sequelize-postgres) Docker image for PostgreSQL, which install all the extensions required by tests.
+**POSTGRES:** Sequelize uses [special](https://github.com/sushantdhiman/sequelize-postgres) Docker image for Postgres, which install all the extensions required by tests.
 
 ### 4. Running tests
 

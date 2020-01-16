@@ -447,7 +447,7 @@ describe(Support.getTestDialectTeaser('Instance'), () => {
         }, { timestamps: false });
         return User2.sync().then(() => {
           return User2.create({ username: 'john doe' }).then(johnDoe => {
-            // sqlite and mysql return undefined, whereas postgres returns null
+            // SQLite and MySQL return undefined, whereas Postgres returns null
             expect([undefined, null]).to.include(johnDoe.updatedAt);
           });
         });

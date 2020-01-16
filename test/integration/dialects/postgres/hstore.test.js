@@ -7,7 +7,7 @@ const chai = require('chai'),
   hstore = require('../../../../lib/dialects/postgres/hstore');
 
 if (dialect.match(/^postgres/)) {
-  describe('[POSTGRES Specific] hstore', () => {
+  describe('[POSTGRES-specific] hstore', () => {
     describe('stringify', () => {
       it('should handle empty objects correctly', () => {
         expect(hstore.stringify({ })).to.equal('');

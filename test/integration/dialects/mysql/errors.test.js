@@ -8,7 +8,7 @@ const Sequelize = require('../../../../index');
 const DataTypes = require('../../../../lib/data-types');
 
 if (dialect === 'mysql') {
-  describe('[MYSQL Specific] Errors', () => {
+  describe('[MYSQL-specific] Errors', () => {
 
     const validateError = (promise, errClass, errValues) => {
       const wanted = Object.assign({}, errValues);

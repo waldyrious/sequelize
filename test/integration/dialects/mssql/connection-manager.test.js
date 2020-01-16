@@ -7,7 +7,7 @@ const Sequelize = Support.Sequelize;
 const dialect = Support.getTestDialect();
 
 if (dialect.match(/^mssql/)) {
-  describe('[MSSQL Specific] Connection Manager', () => {
+  describe('[MSSQL-specific] Connection Manager', () => {
     describe('Errors', () => {
       it('ECONNREFUSED', () => {
         const sequelize = Support.createSequelizeInstance({ host: '127.0.0.1', port: 34237 });

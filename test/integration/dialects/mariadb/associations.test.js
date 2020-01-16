@@ -8,7 +8,7 @@ const chai = require('chai'),
 
 if (dialect !== 'mariadb') return;
 
-describe('[MariaDB Specific] Associations', () => {
+describe('[MARIADB-specific] Associations', () => {
   describe('many-to-many', () => {
     describe('where tables have the same prefix', () => {
       it('should create a table wp_table1wp_table2s', function() {
@@ -51,7 +51,7 @@ describe('[MariaDB Specific] Associations', () => {
 
   describe('HasMany', () => {
     beforeEach(function() {
-      //prevent periods from occurring in the table name since they are used to delimit (table.column)
+      // prevent periods from occurring in the table name since they are used to delimit (table.column)
       this.User = this.sequelize.define(`User${Math.ceil(Math.random() * 10000000)}`, { name: DataTypes.STRING });
       this.Task = this.sequelize.define(`Task${Math.ceil(Math.random() * 10000000)}`, { name: DataTypes.STRING });
       this.users = null;

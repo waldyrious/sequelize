@@ -25,7 +25,7 @@ describe(Support.getTestDialectTeaser('SQL'), () => {
     };
 
     testsql({
-      limit: 10, //when no order by present, one is automagically prepended, test its existence
+      limit: 10, // when no order by present, one is automagically prepended, test its existence
       model: { primaryKeyField: 'id', name: 'tableRef' }
     }, {
       default: ' LIMIT 10',

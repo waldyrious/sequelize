@@ -11,7 +11,7 @@ const chai = require('chai'),
   sequelize = require('../../../../lib/sequelize');
 
 if (dialect.match(/^postgres/)) {
-  describe('[POSTGRES Specific] DAO', () => {
+  describe('[POSTGRES-specific] DAO', () => {
     beforeEach(function() {
       this.sequelize.options.quoteIdentifiers = true;
       this.User = this.sequelize.define('User', {

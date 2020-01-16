@@ -1,7 +1,7 @@
 /**
  * Can be used to
  * make foreign key constraints deferrable and to set the constaints within a
- * transaction. This is only supported in PostgreSQL.
+ * transaction. This is only supported in Postgres.
  *
  * The foreign keys can be configured like this. It will create a foreign key
  * that will check the constraints immediately when the data was inserted.
@@ -63,7 +63,7 @@ export interface NotDeferrableStatic extends AbstractDeferrableStatic {
 }
 export interface NotDeferrable extends Deferrable {}
 /**
- * Will set the constraints to not deferred. This is the default in PostgreSQL and it make
+ * Will set the constraints to not deferred. This is the default in Postgres and it make
  * it impossible to dynamically defer the constraints within a transaction.
  */
 export const NOT: NotDeferrableStatic;

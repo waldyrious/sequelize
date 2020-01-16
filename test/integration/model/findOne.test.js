@@ -73,7 +73,7 @@ describe(Support.getTestDialectTeaser('Model'), () => {
 
       if (dialect === 'mysql') {
         // Bit fields interpreted as boolean need conversion from buffer / bool.
-        // Sqlite returns the inserted value as is, and postgres really should the built in bool type instead
+        // SQLite returns the inserted value as is, and postgres really should the built in bool type instead
 
         it('allows bit fields as booleans', function() {
           let bitUser = this.sequelize.define('bituser', {

@@ -51,9 +51,9 @@ const sequelize = new Sequelize('database', 'username', 'password', {
 });
 ```
 
-### PostgreSQL
+### Postgres
 
-The underlying connector library used by Sequelize for PostgreSQL is the [pg](https://www.npmjs.com/package/pg) npm package (version 7.0.0 or above). The module [pg-hstore](https://www.npmjs.com/package/pg-hstore) is also necessary.
+The underlying connector library used by Sequelize for Postgres is the [pg](https://www.npmjs.com/package/pg) npm package (version 7.0.0 or above). The module [pg-hstore](https://www.npmjs.com/package/pg-hstore) is also necessary.
 
 You can provide custom options to it using the `dialectOptions` in the Sequelize constructor:
 
@@ -95,9 +95,9 @@ const sequelize = new Sequelize('database', 'username', 'password', {
 });
 ```
 
-## Data type: TIMESTAMP WITHOUT TIME ZONE - PostgreSQL only
+## Data type: TIMESTAMP WITHOUT TIME ZONE - Postgres only
 
-If you are working with the PostgreSQL `TIMESTAMP WITHOUT TIME ZONE` and you need to parse it to a different timezone, please use the pg library's own parser:
+If you are working with the Postgres `TIMESTAMP WITHOUT TIME ZONE` and you need to parse it to a different timezone, please use the pg library's own parser:
 
 ```js
 require('pg').types.setTypeParser(1114, stringValue => {
@@ -106,7 +106,7 @@ require('pg').types.setTypeParser(1114, stringValue => {
 });
 ```
 
-## Data type: ARRAY(ENUM) - PostgreSQL only
+## Data type: ARRAY(ENUM) - Postgres only
 
 Array(Enum) type requireS special treatment. Whenever Sequelize will talk to the database, it has to typecast array values with ENUM name.
 
@@ -180,7 +180,7 @@ const sequelize = new Sequelize(db, user, pw, {
 })
 ```
 
-## Table comments - MySQL/MariaDB/PostgreSQL only
+## Table comments - MySQL/MariaDB/Postgres only
 
 You can specify a comment for a table when defining the model:
 

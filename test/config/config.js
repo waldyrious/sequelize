@@ -40,7 +40,7 @@ module.exports = {
     }
   },
 
-  //make idle time small so that tests exit promptly
+  // make idle time small so that tests exit promptly
   mysql: {
     database: env.SEQ_MYSQL_DB || env.SEQ_DB || 'sequelize_test',
     username: env.SEQ_MYSQL_USER || env.SEQ_USER || 'root',

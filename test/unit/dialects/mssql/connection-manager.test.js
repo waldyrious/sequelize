@@ -9,7 +9,7 @@ const chai = require('chai'),
   sinon = require('sinon');
 
 if (dialect === 'mssql') {
-  describe('[MSSQL Specific] Connection Manager', () => {
+  describe('[MSSQL-specific] Connection Manager', () => {
     beforeEach(function() {
       this.config = {
         dialect: 'mssql',

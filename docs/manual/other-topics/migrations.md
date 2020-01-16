@@ -61,7 +61,7 @@ Before continuing further we will need to tell the CLI how to connect to the dat
 }
 ```
 
-Note that the Sequelize CLI assumes mysql by default. If you're using another dialect, you need to change the content of the `"dialect"` option.
+Note that the Sequelize CLI assumes MySQL by default. If you're using another dialect, you need to change the content of the `"dialect"` option.
 
 Now edit this file and set correct database credentials and dialect. The keys of the objects (e.g. "development") are used on `model/index.js` for matching `process.env.NODE_ENV` (When undefined, "development" is a default value).
 

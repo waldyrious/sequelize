@@ -9,7 +9,7 @@ const chai = require('chai'),
   QueryGenerator = require('../../../../lib/dialects/postgres/query-generator');
 
 if (dialect.match(/^postgres/)) {
-  describe('[POSTGRES Specific] DataTypes', () => {
+  describe('[POSTGRES-specific] DataTypes', () => {
     beforeEach(function() {
       this.queryGenerator = new QueryGenerator({
         sequelize: this.sequelize,
